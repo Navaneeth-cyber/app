@@ -3,7 +3,7 @@ name: Build APK
 on:
   push:
     branches:
-      - main  # or your default branch
+      - main
   pull_request:
     branches:
       - main
@@ -28,7 +28,7 @@ jobs:
       run: flutter build apk --release
 
     - name: Upload APK as Artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: app-release
         path: build/app/outputs/flutter-apk/app-release.apk
